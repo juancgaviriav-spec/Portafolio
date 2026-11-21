@@ -1,0 +1,833 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Portafolio profesional de Juan Carlos Gaviria Valencia">
+
+<title>Juan Carlos Gaviria Valencia | Portafolio Profesional</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+    --primary: #0B1F46;
+    --secondary: #155EEF;
+    --accent: #38BDF8;
+    --light: #F0F5FF;
+    --text: #26364D;
+    --muted: #64748B;
+    --white: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--light);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+/* ENCABEZADO */
+
+header {
+    background: var(--primary);
+    color: white;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--accent);
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: color .3s;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+/* PRESENTACIÓN PRINCIPAL */
+
+.hero {
+    min-height: 540px;
+    background: linear-gradient(
+        120deg,
+        #0B1F46 0%,
+        #155EEF 65%,
+        #2684FF 100%
+    );
+
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 80px 10%;
+}
+
+.hero-content {
+    max-width: 950px;
+}
+
+/* FOTO Y NOMBRE */
+
+.profile-heading {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 25px 0;
+}
+
+.profile-photo {
+    width: 165px;
+    height: 165px;
+    min-width: 165px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 8px 25px rgba(0,0,0,.25);
+    background: #DCEBFF;
+    display: none;
+}
+
+.photo-placeholder {
+    width: 165px;
+    height: 165px;
+    min-width: 165px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.15);
+    border: 3px dashed #7DD3FC;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 13px;
+    text-align: center;
+}
+
+.photo-placeholder span {
+    font-size: 43px;
+    margin-bottom: 5px;
+}
+
+.profile-name h1 {
+    font-size: clamp(35px, 6vw, 58px);
+    line-height: 1.15;
+}
+
+.profile-name h2 {
+    font-size: 21px;
+    font-weight: 500;
+    color: #DCEBFF;
+    margin-top: 12px;
+}
+
+.hero-tag {
+    color: #7DD3FC;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+.hero p {
+    margin-top: 20px;
+    max-width: 650px;
+    color: #E0EBFF;
+    font-size: 16px;
+}
+
+/* BOTONES */
+
+.button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 13px 25px;
+    background: var(--accent);
+    color: var(--primary);
+    border: none;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.button:hover {
+    background: white;
+    transform: translateY(-3px);
+}
+
+.pdf-button {
+    border: 2px solid white;
+    margin-left: 10px;
+}
+
+.photo-upload {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 17px;
+    background: rgba(255,255,255,.12);
+    border: 1px solid #7DD3FC;
+    color: white;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.photo-upload:hover {
+    background: rgba(255,255,255,.25);
+}
+
+.photo-input {
+    display: none;
+}
+
+/* SECCIONES */
+
+section {
+    padding: 75px 10%;
+}
+
+.section-title {
+    font-size: 30px;
+    color: var(--primary);
+    margin-bottom: 12px;
+}
+
+.section-subtitle {
+    color: var(--muted);
+    margin-bottom: 35px;
+}
+
+/* PERFIL PROFESIONAL */
+
+.about {
+    background: white;
+}
+
+.about-text {
+    max-width: 950px;
+    font-size: 17px;
+    line-height: 1.9;
+    text-align: justify;
+    border-left: 4px solid var(--secondary);
+    padding-left: 25px;
+}
+
+/* FORMACIÓN */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(250px, 1fr)
+    );
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(11,31,70,.08);
+    border-top: 4px solid var(--secondary);
+    transition: transform .3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: var(--primary);
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* EXPERIENCIA */
+
+.experience {
+    background: white;
+}
+
+.timeline {
+    border-left: 3px solid var(--secondary);
+    padding-left: 25px;
+    max-width: 800px;
+}
+
+.timeline-item {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -34px;
+    top: 8px;
+    width: 15px;
+    height: 15px;
+    background: var(--accent);
+    border: 3px solid var(--secondary);
+    border-radius: 50%;
+}
+
+.timeline-item h3 {
+    color: var(--primary);
+}
+
+/* CONTACTO */
+
+.contact {
+    background: linear-gradient(
+        120deg,
+        #0B1F46,
+        #155EEF
+    );
+    color: white;
+    text-align: center;
+}
+
+.contact .section-title {
+    color: white;
+}
+
+.contact p {
+    color: #DCEBFF;
+    margin-bottom: 12px;
+}
+
+.contact a:not(.button) {
+    color: #7DD3FC;
+    text-decoration: none;
+}
+
+/* PIE DE PÁGINA */
+
+footer {
+    text-align: center;
+    background: #07152F;
+    color: #B9C8DC;
+    padding: 22px;
+    font-size: 13px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+
+    header {
+        justify-content: center;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero {
+        padding: 55px 7%;
+    }
+
+    section {
+        padding: 55px 7%;
+    }
+
+    .profile-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .profile-photo,
+    .photo-placeholder {
+        width: 130px;
+        height: 130px;
+        min-width: 130px;
+    }
+
+    .profile-name h1 {
+        font-size: 36px;
+    }
+
+    .about-text {
+        text-align: left;
+        padding-left: 15px;
+    }
+
+    .pdf-button {
+        margin-left: 0;
+    }
+}
+
+/* CONFIGURACIÓN DE IMPRESIÓN Y PDF */
+
+@media print {
+
+    @page {
+        size: A4;
+        margin: 12mm;
+    }
+
+    body {
+        background: white;
+        font-size: 11px;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+
+    header nav,
+    .no-print,
+    footer {
+        display: none !important;
+    }
+
+    header {
+        padding: 10px 20px;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 35px 30px;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .profile-photo {
+        width: 115px;
+        height: 115px;
+        min-width: 115px;
+        display: block !important;
+    }
+
+    .photo-placeholder {
+        display: none !important;
+    }
+
+    .profile-heading {
+        margin: 15px 0;
+    }
+
+    .profile-name h1 {
+        font-size: 32px;
+    }
+
+    .profile-name h2 {
+        font-size: 16px;
+    }
+
+    section {
+        padding: 30px 25px;
+    }
+
+    .section-title {
+        font-size: 22px;
+    }
+
+    .about-text {
+        font-size: 12px;
+        line-height: 1.7;
+    }
+
+    .card {
+        box-shadow: none;
+        break-inside: avoid;
+    }
+
+    .timeline-item {
+        break-inside: avoid;
+    }
+
+    .contact {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ENCABEZADO -->
+
+<header>
+
+    <div class="logo">JCGV.</div>
+
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#perfil">Perfil</a>
+        <a href="#formacion">Formación</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+</header>
+
+<main>
+
+<!-- PRESENTACIÓN -->
+
+<section class="hero" id="inicio">
+
+    <div class="hero-content">
+
+        <span class="hero-tag">
+            Portafolio profesional
+        </span>
+
+        <div class="profile-heading">
+
+            <!-- FOTO DE PERFIL -->
+
+            <div id="photoPlaceholder" class="photo-placeholder">
+                <span>+</span>
+                Agregar fotografía
+            </div>
+
+            <img
+                id="profilePhoto"
+                class="profile-photo"
+                alt="Fotografía de Juan Carlos Gaviria Valencia"
+            >
+
+            <!-- NOMBRE -->
+
+            <div class="profile-name">
+
+                <h1>
+                    Juan Carlos<br>
+                    Gaviria Valencia
+                </h1>
+
+                <h2>
+                    Administrador Tecnológico
+                </h2>
+
+            </div>
+
+        </div>
+
+        <!-- CARGAR FOTOGRAFÍA -->
+
+        <div class="no-print">
+
+            <label for="photoInput" class="photo-upload">
+                + Cargar fotografía de perfil
+            </label>
+
+            <input
+                type="file"
+                id="photoInput"
+                class="photo-input"
+                accept="image/jpeg,image/png,image/webp"
+            >
+
+        </div>
+
+        <p>
+            Estudiante de séptimo semestre de Administración
+            Tecnológica en el ITM, con experiencia en gestión
+            de almacenes y procesos administrativos y logísticos.
+        </p>
+
+        <a href="#perfil" class="button no-print">
+            Conoce mi perfil
+        </a>
+
+        <button
+            onclick="descargarPDF()"
+            class="button pdf-button no-print"
+            type="button"
+        >
+            ↓ Descargar portafolio en PDF
+        </button>
+
+    </div>
+
+</section>
+
+<!-- PERFIL PROFESIONAL -->
+
+<section class="about" id="perfil">
+
+    <h2 class="section-title">
+        Perfil profesional
+    </h2>
+
+    <p class="section-subtitle">
+        Formación, competencias y visión profesional
+    </p>
+
+    <div class="about-text">
+
+        <p>
+            Es un ciudadano global que cuenta con formación
+            integral, con cualidades éticas y de autonomía
+            para su desarrollo profesional, con capacidad
+            para planear, organizar, dirigir, controlar y
+            evaluar los procesos de gestión del conocimiento,
+            tecnología e innovación, alineándolos con la
+            estrategia para el logro de los objetivos de las
+            organizaciones en las que interviene, lo cual
+            le permite tomar decisiones en contextos
+            complejos, dinámicos e inciertos.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- FORMACIÓN ACADÉMICA -->
+
+<section id="formacion">
+
+    <h2 class="section-title">
+        Formación académica
+    </h2>
+
+    <p class="section-subtitle">
+        Mi desarrollo académico y profesional
+    </p>
+
+    <div class="cards">
+
+        <article class="card">
+
+            <h3>
+                Administración Tecnológica
+            </h3>
+
+            <p>
+                <strong>Institución:</strong>
+                Institución Universitaria ITM
+            </p>
+
+            <p>
+                <strong>Programa:</strong>
+                Administración Tecnológica
+            </p>
+
+            <p>
+                <strong>Semestre:</strong> Séptimo
+            </p>
+
+            <p>
+                <strong>Ciudad:</strong>
+                Medellín, Colombia
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+<!-- EXPERIENCIA LABORAL -->
+
+<section class="experience" id="experiencia">
+
+    <h2 class="section-title">
+        Experiencia laboral
+    </h2>
+
+    <p class="section-subtitle">
+        Experiencia en el sector empresarial
+    </p>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+
+            <h3>
+                Jefe de Almacén
+            </h3>
+
+            <p>
+                <strong>Recuperar S.A.S.</strong>
+            </p>
+
+            <p>
+                Responsable de la gestión y administración
+                de almacén, coordinación de actividades
+                operativas y seguimiento de procesos
+                relacionados con el abastecimiento y
+                control de inventarios.
+            </p>
+
+            <p>
+                Enfoque en la organización de recursos,
+                cumplimiento de requerimientos internos
+                y mejora de los procesos logísticos.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACTO -->
+
+<section class="contact" id="contacto">
+
+    <h2 class="section-title">
+        Conectemos
+    </h2>
+
+    <p>
+        Estoy interesado en oportunidades profesionales,
+        proyectos y espacios de aprendizaje.
+    </p>
+
+    <p>
+        <strong>Correo electrónico:</strong>
+
+        <a href="mailto:juanc.gaviriag@gmail.com">
+            juanc.gaviriag@gmail.com
+        </a>
+    </p>
+
+    <p>
+        Medellín, Antioquia, Colombia
+    </p>
+
+    <a
+        class="button no-print"
+        href="mailto:juanc.gaviriag@gmail.com"
+    >
+        Enviar correo
+    </a>
+
+</section>
+
+</main>
+
+<!-- PIE DE PÁGINA -->
+
+<footer>
+
+    <p>
+        © 2026 Juan Carlos Gaviria Valencia.
+        Portafolio profesional.
+    </p>
+
+</footer>
+
+<!-- FUNCIONALIDADES JAVASCRIPT -->
+
+<script>
+
+/* CARGAR FOTOGRAFÍA DE PERFIL */
+
+const photoInput = document.getElementById("photoInput");
+const profilePhoto = document.getElementById("profilePhoto");
+const photoPlaceholder = document.getElementById("photoPlaceholder");
+
+photoInput.addEventListener("change", function(event) {
+
+    const file = event.target.files[0];
+
+    if (!file) {
+        return;
+    }
+
+    if (!file.type.startsWith("image/")) {
+        alert("Por favor selecciona una imagen válida.");
+        return;
+    }
+
+    if (file.size > 10 * 1024 * 1024) {
+        alert("La imagen no debe superar los 10 MB.");
+        photoInput.value = "";
+        return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+
+        profilePhoto.src = e.target.result;
+
+        profilePhoto.style.display = "block";
+
+        photoPlaceholder.style.display = "none";
+
+    };
+
+    reader.readAsDataURL(file);
+
+});
+
+/* DESCARGAR PORTAFOLIO EN PDF */
+
+function descargarPDF() {
+
+    const tituloOriginal = document.title;
+
+    document.title = "Portafolio_Juan_Carlos_Gaviria_Valencia";
+
+    window.print();
+
+    document.title = tituloOriginal;
+
+}
+
+</script>
+
+</body>
+</html>
