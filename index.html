@@ -4,17 +4,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portafolio profesional de Juan Carlos Gaviria Valencia. Administración, tecnología, innovación y proyectos.">
 
-<meta name="description" content="Portafolio profesional de Juan Carlos Gaviria Valencia">
-
-<title>Juan Carlos Gaviria Valencia | Portafolio Profesional</title>
+<title>Juan Carlos Gaviria Valencia | Portafolio</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+
+/* =================================
+   1. VARIABLES Y CONFIGURACIÓN
+================================= */
 
 :root {
     --primary: #0B1F46;
@@ -24,6 +26,8 @@
     --text: #26364D;
     --muted: #64748B;
     --white: #FFFFFF;
+    --border: #E2EAF5;
+    --shadow: 0 8px 30px rgba(11,31,70,.07);
 }
 
 * {
@@ -34,6 +38,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 85px;
 }
 
 body {
@@ -43,284 +48,537 @@ body {
     line-height: 1.7;
 }
 
-/* ENCABEZADO */
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 82%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+section {
+    padding: 85px 0;
+}
+
+.section-header {
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    color: var(--muted);
+    font-size: 15px;
+    max-width: 720px;
+}
+
+.section-tag {
+    display: inline-block;
+    color: var(--secondary);
+    background: #E5EEFF;
+    padding: 6px 13px;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+/* =================================
+   2. NAVEGACIÓN
+================================= */
 
 header {
-    background: var(--primary);
-    color: white;
-    padding: 20px 8%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(11,31,70,.97);
+    backdrop-filter: blur(12px);
+    padding: 16px 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,.1);
+}
+
+.nav-container {
+    width: 88%;
+    max-width: 1300px;
+    margin: auto;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
+    justify-content: space-between;
+    gap: 20px;
 }
 
 .logo {
-    font-size: 21px;
+    color: var(--accent);
+    font-size: 22px;
     font-weight: 800;
     letter-spacing: 2px;
-    color: var(--accent);
 }
 
 nav {
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
-    gap: 25px;
+    gap: 19px;
 }
 
 nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 13px;
+    color: #E5EEFF;
+    font-size: 12px;
     font-weight: 600;
-    transition: color .3s;
+    transition: .3s;
 }
 
 nav a:hover {
     color: var(--accent);
 }
 
-/* PRESENTACIÓN PRINCIPAL */
+/* =================================
+   3. HERO / PRESENTACIÓN
+================================= */
 
 .hero {
-    min-height: 540px;
     background: linear-gradient(
         120deg,
-        #0B1F46 0%,
-        #155EEF 65%,
-        #2684FF 100%
+        #0B1F46,
+        #155EEF 70%,
+        #2684FF
     );
-
     color: white;
-    display: flex;
-    align-items: center;
-    padding: 80px 10%;
+    padding: 90px 0;
 }
 
 .hero-content {
-    max-width: 950px;
-}
-
-/* FOTO Y NOMBRE */
-
-.profile-heading {
     display: flex;
     align-items: center;
-    gap: 30px;
-    margin: 25px 0;
+    gap: 55px;
 }
 
 .profile-photo {
-    width: 165px;
-    height: 165px;
-    min-width: 165px;
+    width: 210px;
+    height: 210px;
+    min-width: 210px;
     border-radius: 50%;
     object-fit: cover;
-    border: 5px solid white;
-    box-shadow: 0 8px 25px rgba(0,0,0,.25);
+    border: 6px solid rgba(255,255,255,.9);
+    box-shadow: 0 12px 35px rgba(0,0,0,.25);
     background: #DCEBFF;
-    display: none;
-}
-
-.photo-placeholder {
-    width: 165px;
-    height: 165px;
-    min-width: 165px;
-    border-radius: 50%;
-    background: rgba(255,255,255,.15);
-    border: 3px dashed #7DD3FC;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 13px;
-    text-align: center;
-}
-
-.photo-placeholder span {
-    font-size: 43px;
-    margin-bottom: 5px;
-}
-
-.profile-name h1 {
-    font-size: clamp(35px, 6vw, 58px);
-    line-height: 1.15;
-}
-
-.profile-name h2 {
-    font-size: 21px;
-    font-weight: 500;
-    color: #DCEBFF;
-    margin-top: 12px;
 }
 
 .hero-tag {
     color: #7DD3FC;
-    text-transform: uppercase;
-    font-size: 13px;
-    letter-spacing: 3px;
+    font-size: 12px;
     font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
 }
 
-.hero p {
-    margin-top: 20px;
-    max-width: 650px;
+.hero h1 {
+    font-size: clamp(38px, 5vw, 60px);
+    line-height: 1.12;
+    margin: 18px 0;
+}
+
+.hero h2 {
+    color: #DCEBFF;
+    font-size: 21px;
+    font-weight: 500;
+}
+
+.hero-description {
     color: #E0EBFF;
-    font-size: 16px;
+    max-width: 650px;
+    margin-top: 20px;
+    font-size: 15px;
 }
 
-/* BOTONES */
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
 
 .button {
     display: inline-block;
-    margin-top: 25px;
-    padding: 13px 25px;
-    background: var(--accent);
-    color: var(--primary);
-    border: none;
+    padding: 12px 22px;
     border-radius: 7px;
-    text-decoration: none;
+    font-family: inherit;
+    font-size: 13px;
     font-weight: 700;
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
     cursor: pointer;
+    border: 1px solid transparent;
     transition: .3s;
 }
 
-.button:hover {
+.button-primary {
+    background: var(--accent);
+    color: var(--primary);
+}
+
+.button-primary:hover {
     background: white;
     transform: translateY(-3px);
 }
 
-.pdf-button {
-    border: 2px solid white;
-    margin-left: 10px;
-}
-
-.photo-upload {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 17px;
-    background: rgba(255,255,255,.12);
-    border: 1px solid #7DD3FC;
+.button-outline {
     color: white;
-    border-radius: 7px;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: .3s;
+    border-color: rgba(255,255,255,.6);
+    background: transparent;
 }
 
-.photo-upload:hover {
-    background: rgba(255,255,255,.25);
-}
-
-.photo-input {
-    display: none;
-}
-
-/* SECCIONES */
-
-section {
-    padding: 75px 10%;
-}
-
-.section-title {
-    font-size: 30px;
+.button-outline:hover {
+    background: white;
     color: var(--primary);
-    margin-bottom: 12px;
 }
 
-.section-subtitle {
-    color: var(--muted);
-    margin-bottom: 35px;
-}
+/* =================================
+   4. PERFIL PROFESIONAL
+================================= */
 
-/* PERFIL PROFESIONAL */
-
-.about {
+.about-professional {
     background: white;
 }
 
-.about-text {
-    max-width: 950px;
-    font-size: 17px;
-    line-height: 1.9;
-    text-align: justify;
-    border-left: 4px solid var(--secondary);
-    padding-left: 25px;
+.professional-card {
+    background: #F6F9FF;
+    border-left: 5px solid var(--secondary);
+    padding: 35px;
+    border-radius: 0 12px 12px 0;
+    max-width: 1000px;
 }
 
-/* FORMACIÓN */
+.professional-card p {
+    font-size: 16px;
+    line-height: 2;
+    text-align: justify;
+}
 
-.cards {
+/* =================================
+   5. ACERCA DE MÍ
+================================= */
+
+.about-me {
+    background: var(--light);
+}
+
+.about-grid {
     display: grid;
-    grid-template-columns: repeat(
-        auto-fit,
-        minmax(250px, 1fr)
+    grid-template-columns: 1.3fr .7fr;
+    gap: 45px;
+    align-items: center;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--text);
+}
+
+.about-highlight {
+    background: linear-gradient(
+        135deg,
+        #0B1F46,
+        #155EEF
     );
-    gap: 25px;
+    padding: 35px;
+    border-radius: 15px;
+    color: white;
+    box-shadow: var(--shadow);
+}
+
+.about-highlight .quote {
+    color: #7DD3FC;
+    font-size: 42px;
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+.about-highlight p {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.7;
+}
+
+/* =================================
+   6. FORMACIÓN ACADÉMICA
+================================= */
+
+.education {
+    background: white;
 }
 
 .card {
     background: white;
     padding: 30px;
+    border: 1px solid var(--border);
     border-radius: 12px;
-    box-shadow: 0 5px 25px rgba(11,31,70,.08);
-    border-top: 4px solid var(--secondary);
-    transition: transform .3s;
+    box-shadow: var(--shadow);
+    transition: .3s;
 }
 
 .card:hover {
     transform: translateY(-5px);
 }
 
+.education-card {
+    max-width: 650px;
+    border-top: 4px solid var(--secondary);
+}
+
+.card-label {
+    color: var(--secondary);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
 .card h3 {
     color: var(--primary);
-    margin-bottom: 12px;
+    font-size: 19px;
+    margin: 12px 0;
 }
 
 .card p {
     color: var(--muted);
     font-size: 14px;
+    margin-bottom: 5px;
 }
 
-/* EXPERIENCIA */
+/* =================================
+   7. EXPERIENCIA LABORAL
+================================= */
 
 .experience {
+    background: var(--light);
+}
+
+.experience-card {
+    max-width: 850px;
+    border-left: 5px solid var(--secondary);
+}
+
+.experience-card h3 {
+    font-size: 22px;
+}
+
+.experience-card .company {
+    color: var(--secondary);
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+/* =================================
+   8. CERTIFICACIONES
+================================= */
+
+.certificates {
     background: white;
 }
 
-.timeline {
-    border-left: 3px solid var(--secondary);
-    padding-left: 25px;
-    max-width: 800px;
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
 }
 
-.timeline-item {
-    margin-bottom: 30px;
-    position: relative;
+.certificate-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 17px;
+    background: #F7F9FD;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    transition: .3s;
 }
 
-.timeline-item::before {
-    content: "";
-    position: absolute;
-    left: -34px;
-    top: 8px;
-    width: 15px;
-    height: 15px;
-    background: var(--accent);
-    border: 3px solid var(--secondary);
-    border-radius: 50%;
+.certificate-item:hover {
+    border-color: var(--secondary);
+    transform: translateX(4px);
 }
 
-.timeline-item h3 {
+.certificate-number {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    border-radius: 8px;
+    background: #E5EEFF;
+    color: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.certificate-item p {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* =================================
+   9. PROYECTOS
+================================= */
+
+.projects {
+    background: var(--light);
+}
+
+.projects-intro {
+    max-width: 900px;
+    margin-bottom: 45px;
+}
+
+.projects-intro p {
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 15px;
+    line-height: 1.9;
+}
+
+.project-category {
+    margin-bottom: 55px;
+}
+
+.category-heading {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.category-number {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--secondary);
+}
+
+.category-heading h3 {
     color: var(--primary);
+    font-size: 22px;
 }
 
-/* CONTACTO */
+.category-status {
+    background: #DBF5E8;
+    color: #18794E;
+    padding: 5px 12px;
+    border-radius: 30px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.category-status.past {
+    background: #E5EEFF;
+    color: #155EEF;
+}
+
+.category-status.future {
+    background: #FFF0D9;
+    color: #A65B00;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.project-card {
+    background: white;
+    padding: 26px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    transition: .3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--secondary);
+}
+
+.project-icon {
+    width: 43px;
+    height: 43px;
+    border-radius: 10px;
+    background: #E5EEFF;
+    color: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+    margin-bottom: 17px;
+}
+
+.project-card h4 {
+    font-size: 16px;
+    color: var(--primary);
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.project-card p {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 12px;
+    line-height: 1.7;
+}
+
+.project-focus {
+    margin-top: auto;
+    padding-top: 13px;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--secondary);
+    font-weight: 600;
+}
+
+.project-note {
+    background: white;
+    border-left: 4px solid var(--secondary);
+    padding: 25px;
+    border-radius: 0 10px 10px 0;
+    margin-top: 35px;
+}
+
+.project-note h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.project-note p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.project-note strong {
+    display: block;
+    color: var(--secondary);
+    margin-top: 15px;
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
+/* =================================
+   10. CONTACTO Y REDES SOCIALES
+================================= */
 
 .contact {
     background: linear-gradient(
@@ -336,75 +594,163 @@ section {
     color: white;
 }
 
-.contact p {
+.contact .section-subtitle {
     color: #DCEBFF;
-    margin-bottom: 12px;
+    margin: 0 auto 35px;
 }
 
-.contact a:not(.button) {
+.contact-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.contact-card {
+    min-width: 250px;
+    padding: 23px;
+    background: rgba(255,255,255,.09);
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 12px;
+}
+
+.contact-icon {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.contact-card h3 {
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.contact-card a {
     color: #7DD3FC;
-    text-decoration: none;
+    font-size: 13px;
+    overflow-wrap: anywhere;
 }
 
-/* PIE DE PÁGINA */
-
-footer {
-    text-align: center;
-    background: #07152F;
-    color: #B9C8DC;
-    padding: 22px;
+.contact-card p {
+    color: #DCEBFF;
     font-size: 13px;
 }
 
-/* RESPONSIVE */
+/* =================================
+   11. PIE DE PÁGINA
+================================= */
+
+footer {
+    background: #07152F;
+    color: #B9C8DC;
+    text-align: center;
+    padding: 25px 15px;
+    font-size: 12px;
+}
+
+footer span {
+    color: var(--accent);
+}
+
+/* =================================
+   12. DISEÑO RESPONSIVE
+================================= */
+
+@media (max-width: 1000px) {
+
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .container {
+        width: 88%;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+}
 
 @media (max-width: 700px) {
 
-    header {
-        justify-content: center;
+    section {
+        padding: 60px 0;
+    }
+
+    .container {
+        width: 88%;
+    }
+
+    .nav-container {
+        flex-direction: column;
     }
 
     nav {
         justify-content: center;
-        gap: 15px;
+        gap: 12px;
     }
 
     .hero {
-        padding: 55px 7%;
+        padding: 60px 0;
     }
 
-    section {
-        padding: 55px 7%;
-    }
-
-    .profile-heading {
+    .hero-content {
         flex-direction: column;
         align-items: flex-start;
-        gap: 20px;
+        gap: 25px;
     }
 
-    .profile-photo,
-    .photo-placeholder {
-        width: 130px;
-        height: 130px;
-        min-width: 130px;
+    .profile-photo {
+        width: 145px;
+        height: 145px;
+        min-width: 145px;
     }
 
-    .profile-name h1 {
-        font-size: 36px;
+    .hero h1 {
+        font-size: 39px;
     }
 
-    .about-text {
+    .hero h2 {
+        font-size: 18px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .certificates-grid,
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 27px;
+    }
+
+    .professional-card {
+        padding: 23px;
+    }
+
+    .professional-card p {
+        font-size: 14px;
         text-align: left;
-        padding-left: 15px;
     }
 
-    .pdf-button {
-        margin-left: 0;
+    .about-highlight {
+        padding: 25px;
+    }
+
+    .contact-card {
+        width: 100%;
     }
 }
 
-/* CONFIGURACIÓN DE IMPRESIÓN Y PDF */
+/* =================================
+   13. IMPRESIÓN Y PDF
+================================= */
 
 @media print {
 
@@ -415,86 +761,107 @@ footer {
 
     body {
         background: white;
-        font-size: 11px;
+        font-size: 10px;
         print-color-adjust: exact;
         -webkit-print-color-adjust: exact;
-    }
-
-    header nav,
-    .no-print,
-    footer {
-        display: none !important;
     }
 
     header {
-        padding: 10px 20px;
+        position: static;
+        padding: 12px;
     }
 
-    .hero {
-        min-height: auto;
-        padding: 35px 30px;
-        print-color-adjust: exact;
-        -webkit-print-color-adjust: exact;
-    }
-
-    .hero-content {
-        max-width: 100%;
-    }
-
-    .profile-photo {
-        width: 115px;
-        height: 115px;
-        min-width: 115px;
-        display: block !important;
-    }
-
-    .photo-placeholder {
+    header nav,
+    .no-print {
         display: none !important;
     }
 
-    .profile-heading {
-        margin: 15px 0;
-    }
-
-    .profile-name h1 {
-        font-size: 32px;
-    }
-
-    .profile-name h2 {
-        font-size: 16px;
+    .container {
+        width: 100%;
+        max-width: 100%;
     }
 
     section {
-        padding: 30px 25px;
+        padding: 25px 0;
+    }
+
+    .hero {
+        padding: 30px;
+        break-inside: avoid;
+    }
+
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+        min-width: 120px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero h2 {
+        font-size: 16px;
+    }
+
+    .hero-description,
+    .about-text p {
+        font-size: 11px;
     }
 
     .section-title {
         font-size: 22px;
     }
 
-    .about-text {
-        font-size: 12px;
-        line-height: 1.7;
+    .section-header {
+        margin-bottom: 20px;
     }
 
-    .card {
+    .about-grid {
+        grid-template-columns: 1.2fr .8fr;
+        gap: 15px;
+    }
+
+    .professional-card,
+    .about-highlight,
+    .card,
+    .project-card,
+    .certificate-item,
+    .contact-card,
+    .project-note {
         box-shadow: none;
         break-inside: avoid;
     }
 
-    .timeline-item {
-        break-inside: avoid;
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .certificates-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .project-card {
+        padding: 15px;
+    }
+
+    .certificate-item {
+        padding: 10px;
     }
 
     .contact {
-        print-color-adjust: exact;
-        -webkit-print-color-adjust: exact;
+        background: #155EEF !important;
     }
 
     a {
-        text-decoration: none;
+        color: inherit;
     }
 
+    footer {
+        padding: 12px;
+    }
 }
 
 </style>
@@ -502,52 +869,52 @@ footer {
 
 <body>
 
-<!-- ENCABEZADO -->
+<!-- =================================
+     NAVEGACIÓN
+================================= -->
 
 <header>
+    <div class="nav-container">
 
-    <div class="logo">JCGV.</div>
+        <a href="#inicio" class="logo">JCGV.</a>
 
-    <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#perfil">Perfil</a>
-        <a href="#formacion">Formación</a>
-        <a href="#experiencia">Experiencia</a>
-        <a href="#contacto">Contacto</a>
-    </nav>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#perfil">Perfil</a>
+            <a href="#acerca">Acerca de mí</a>
+            <a href="#formacion">Formación</a>
+            <a href="#experiencia">Experiencia</a>
+            <a href="#certificados">Certificados</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
 
+    </div>
 </header>
 
 <main>
 
-<!-- PRESENTACIÓN -->
+<!-- =================================
+     INICIO
+================================= -->
 
 <section class="hero" id="inicio">
 
-    <div class="hero-content">
+    <div class="container">
 
-        <span class="hero-tag">
-            Portafolio profesional
-        </span>
-
-        <div class="profile-heading">
-
-            <!-- FOTO DE PERFIL -->
-
-            <div id="photoPlaceholder" class="photo-placeholder">
-                <span>+</span>
-                Agregar fotografía
-            </div>
+        <div class="hero-content">
 
             <img
-                id="profilePhoto"
+                src="./foto-perfil.jpg"
                 class="profile-photo"
                 alt="Fotografía de Juan Carlos Gaviria Valencia"
             >
 
-            <!-- NOMBRE -->
+            <div>
 
-            <div class="profile-name">
+                <span class="hero-tag">
+                    Portafolio profesional
+                </span>
 
                 <h1>
                     Juan Carlos<br>
@@ -558,95 +925,182 @@ footer {
                     Administrador Tecnológico
                 </h2>
 
+                <p class="hero-description">
+                    Estudiante de séptimo semestre de
+                    Administración Tecnológica en el ITM.
+                    Experiencia en gestión de almacenes,
+                    procesos administrativos y logísticos,
+                    con interés en tecnología e innovación.
+                </p>
+
+                <div class="hero-buttons no-print">
+
+                    <a href="#proyectos" class="button button-primary">
+                        Explorar mis proyectos
+                    </a>
+
+                    <button
+                        class="button button-outline"
+                        onclick="descargarPDF()"
+                        type="button"
+                    >
+                        ↓ Descargar portafolio PDF
+                    </button>
+
+                </div>
+
             </div>
 
         </div>
 
-        <!-- CARGAR FOTOGRAFÍA -->
+    </div>
 
-        <div class="no-print">
+</section>
 
-            <label for="photoInput" class="photo-upload">
-                + Cargar fotografía de perfil
-            </label>
+<!-- =================================
+     PERFIL PROFESIONAL
+================================= -->
 
-            <input
-                type="file"
-                id="photoInput"
-                class="photo-input"
-                accept="image/jpeg,image/png,image/webp"
-            >
+<section class="about-professional" id="perfil">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="section-tag">
+                Mi formación profesional
+            </span>
+
+            <h2 class="section-title">
+                Perfil profesional
+            </h2>
+
+            <p class="section-subtitle">
+                Administración Tecnológica
+            </p>
 
         </div>
 
-        <p>
-            Estudiante de séptimo semestre de Administración
-            Tecnológica en el ITM, con experiencia en gestión
-            de almacenes y procesos administrativos y logísticos.
-        </p>
+        <div class="professional-card">
 
-        <a href="#perfil" class="button no-print">
-            Conoce mi perfil
-        </a>
+            <p>
+                Es un ciudadano global que cuenta con formación
+                integral, con cualidades éticas y de autonomía
+                para su desarrollo profesional, con capacidad
+                para planear, organizar, dirigir, controlar y
+                evaluar los procesos de gestión del conocimiento,
+                tecnología e innovación, alineándolos con la
+                estrategia para el logro de los objetivos de las
+                organizaciones en las que interviene, lo cual
+                le permite tomar decisiones en contextos
+                complejos, dinámicos e inciertos.
+            </p>
 
-        <button
-            onclick="descargarPDF()"
-            class="button pdf-button no-print"
-            type="button"
-        >
-            ↓ Descargar portafolio en PDF
-        </button>
-
-    </div>
-
-</section>
-
-<!-- PERFIL PROFESIONAL -->
-
-<section class="about" id="perfil">
-
-    <h2 class="section-title">
-        Perfil profesional
-    </h2>
-
-    <p class="section-subtitle">
-        Formación, competencias y visión profesional
-    </p>
-
-    <div class="about-text">
-
-        <p>
-            Es un ciudadano global que cuenta con formación
-            integral, con cualidades éticas y de autonomía
-            para su desarrollo profesional, con capacidad
-            para planear, organizar, dirigir, controlar y
-            evaluar los procesos de gestión del conocimiento,
-            tecnología e innovación, alineándolos con la
-            estrategia para el logro de los objetivos de las
-            organizaciones en las que interviene, lo cual
-            le permite tomar decisiones en contextos
-            complejos, dinámicos e inciertos.
-        </p>
+        </div>
 
     </div>
 
 </section>
 
-<!-- FORMACIÓN ACADÉMICA -->
+<!-- =================================
+     ACERCA DE MÍ
+================================= -->
 
-<section id="formacion">
+<section class="about-me" id="acerca">
 
-    <h2 class="section-title">
-        Formación académica
-    </h2>
+    <div class="container">
 
-    <p class="section-subtitle">
-        Mi desarrollo académico y profesional
-    </p>
+        <div class="section-header">
 
-    <div class="cards">
+            <span class="section-tag">
+                Mi historia
+            </span>
 
-        <article class="card">
+            <h2 class="section-title">
+                Acerca de mí
+            </h2>
+
+            <p class="section-subtitle">
+                Lo que me inspira, lo que aprendo y hacia dónde voy.
+            </p>
+
+        </div>
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <p>
+                    Soy un apasionado por la tecnología, la gestión
+                    y el aprendizaje constante. Actualmente, me
+                    formo en Administración y conecto mis
+                    conocimientos académicos con mi experiencia
+                    laboral para explorar nuevas formas de mejorar
+                    procesos, resolver problemas y generar valor.
+                </p>
+
+                <p>
+                    Me interesan la innovación, el análisis de datos,
+                    la inteligencia artificial y el desarrollo de
+                    soluciones que hagan más eficiente la manera
+                    en que trabajamos y vivimos.
+                </p>
+
+                <p>
+                    Soy curioso, creativo y orientado al crecimiento.
+                    Disfruto aprender, experimentar con nuevas
+                    herramientas y convertir ideas en proyectos.
+                </p>
+
+            </div>
+
+            <div class="about-highlight">
+
+                <div class="quote">“</div>
+
+                <p>
+                    Estoy construyendo mi propio camino,
+                    combinando experiencia, conocimiento
+                    y tecnología para crear nuevas posibilidades.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =================================
+     FORMACIÓN ACADÉMICA
+================================= -->
+
+<section class="education" id="formacion">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="section-tag">
+                Mi recorrido académico
+            </span>
+
+            <h2 class="section-title">
+                Formación académica
+            </h2>
+
+            <p class="section-subtitle">
+                Formación en gestión, administración y tecnología.
+            </p>
+
+        </div>
+
+        <div class="card education-card">
+
+            <span class="card-label">
+                Formación universitaria
+            </span>
 
             <h3>
                 Administración Tecnológica
@@ -658,61 +1112,11 @@ footer {
             </p>
 
             <p>
-                <strong>Programa:</strong>
-                Administración Tecnológica
-            </p>
-
-            <p>
                 <strong>Semestre:</strong> Séptimo
             </p>
 
             <p>
-                <strong>Ciudad:</strong>
-                Medellín, Colombia
-            </p>
-
-        </article>
-
-    </div>
-
-</section>
-
-<!-- EXPERIENCIA LABORAL -->
-
-<section class="experience" id="experiencia">
-
-    <h2 class="section-title">
-        Experiencia laboral
-    </h2>
-
-    <p class="section-subtitle">
-        Experiencia en el sector empresarial
-    </p>
-
-    <div class="timeline">
-
-        <div class="timeline-item">
-
-            <h3>
-                Jefe de Almacén
-            </h3>
-
-            <p>
-                <strong>Recuperar S.A.S.</strong>
-            </p>
-
-            <p>
-                Responsable de la gestión y administración
-                de almacén, coordinación de actividades
-                operativas y seguimiento de procesos
-                relacionados con el abastecimiento y
-                control de inventarios.
-            </p>
-
-            <p>
-                Enfoque en la organización de recursos,
-                cumplimiento de requerimientos internos
-                y mejora de los procesos logísticos.
+                <strong>Ubicación:</strong> Medellín, Colombia
             </p>
 
         </div>
@@ -721,105 +1125,610 @@ footer {
 
 </section>
 
-<!-- CONTACTO -->
+<!-- =================================
+     EXPERIENCIA LABORAL
+================================= -->
+
+<section class="experience" id="experiencia">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="section-tag">
+                Trayectoria laboral
+            </span>
+
+            <h2 class="section-title">
+                Experiencia profesional
+            </h2>
+
+            <p class="section-subtitle">
+                Experiencia en el sector empresarial y logístico.
+            </p>
+
+        </div>
+
+        <div class="card experience-card">
+
+            <span class="card-label">
+                Experiencia laboral
+            </span>
+
+            <h3>
+                Jefe de Almacén
+            </h3>
+
+            <p class="company">
+                Recuperar S.A.S.
+            </p>
+
+            <p>
+                Responsable de la gestión y administración de
+                almacén, coordinación de actividades operativas
+                y seguimiento de procesos relacionados con el
+                abastecimiento y control de inventarios.
+            </p>
+
+            <br>
+
+            <p>
+                Enfoque en la organización de recursos,
+                cumplimiento de requerimientos internos,
+                trazabilidad y mejora de los procesos logísticos.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =================================
+     CERTIFICADOS Y DIPLOMAS
+================================= -->
+
+<section class="certificates" id="certificados">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="section-tag">
+                Aprendizaje continuo
+            </span>
+
+            <h2 class="section-title">
+                Certificaciones y diplomas
+            </h2>
+
+            <p class="section-subtitle">
+                Formación complementaria en tecnología,
+                gestión, liderazgo, innovación y desarrollo profesional.
+            </p>
+
+        </div>
+
+        <div class="certificates-grid">
+
+            <div class="certificate-item">
+                <span class="certificate-number">01</span>
+                <p>Visualización de datos en Power BI 1.</p>
+            </div>
+
+            <div class="certificate-item">
+                <span class="certificate-number">02</span>
+                <p>Diploma – ITM.</p>
+            </div>
+
+            <div class="certificate-item">
+                <span class="certificate-number">03</span>
+                <p>Acta – ITM.</p>
+            </div>
+
+            <div class="certificate-item">
+                <span class="certificate-number">04</span>
+                <p>Escuela de Liderazgo – AGYL.</p>
+            </div>
+
+            <div class="certificate-item">
+                <span class="certificate-number">05</span>
+                <p>Diploma Prospectiva.</p>
+            </div>
+
+            <div class="certificate-item">
+                <span class="certificate-number">06</span>
+                <p>Certificado Sistema de Pensión.</p>
+            </div>
+
+            <div class="certificate-item">
+                <span class="certificate-number">07</span>
+                <p>Manejo Básico de la Herramienta de Hojas de Cálculo Excel.</p>
+            </div>
+
+            <div class="certificate-item">
+                <span class="certificate-number">08</span>
+                <p>Certificado Escuela Ambiental.</p>
+            </div>
+
+            <div class="certificate-item">
+                <span class="certificate-number">09</span>
+                <p>El Empleador en los Procesos de Calificación.</p>
+            </div>
+
+            <div class="certificate-item">
+                <span class="certificate-number">10</span>
+                <p>Certificado Curso AppSheet.</p>
+            </div>
+
+            <div class="certificate-item">
+                <span class="certificate-number">11</span>
+                <p>Cómo Hacer un Buen Proceso Disciplinario.</p>
+            </div>
+
+            <div class="certificate-item">
+                <span class="certificate-number">12</span>
+                <p>Manejo Básico de la Herramienta de Hojas de Cálculo Excel.</p>
+            </div>
+
+            <div class="certificate-item">
+                <span class="certificate-number">13</span>
+                <p>Formación en Gestión y Gerencia de Proyectos.</p>
+            </div>
+
+            <div class="certificate-item">
+                <span class="certificate-number">14</span>
+                <p>Certificado Conversaciones Comerciales.</p>
+            </div>
+
+            <div class="certificate-item">
+                <span class="certificate-number">15</span>
+                <p>Certificado Alimenta tu Cerebro.</p>
+            </div>
+
+            <div class="certificate-item">
+                <span class="certificate-number">16</span>
+                <p>Certificado Auditor Interno SGI.</p>
+            </div>
+
+            <div class="certificate-item">
+                <span class="certificate-number">17</span>
+                <p>Programa de Aceleración Exponencial (PAE) – Módulo Transformación Digital.</p>
+            </div>
+
+            <div class="certificate-item">
+                <span class="certificate-number">18</span>
+                <p>Escuela de Inteligencia Artificial.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =================================
+     PROYECTOS
+================================= -->
+
+<section class="projects" id="proyectos">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="section-tag">
+                Ideas en movimiento
+            </span>
+
+            <h2 class="section-title">
+                Mis proyectos
+            </h2>
+
+            <p class="section-subtitle">
+                Ideas que se convierten en experiencias,
+                aprendizajes y soluciones.
+            </p>
+
+        </div>
+
+        <div class="projects-intro">
+
+            <p>
+                Este espacio reúne los proyectos en los que he
+                trabajado, las iniciativas que actualmente estoy
+                desarrollando y aquellas ideas que hacen parte
+                de mi visión de crecimiento profesional y personal.
+            </p>
+
+            <p>
+                Mi interés está en conectar la administración,
+                la tecnología, la innovación y la mejora continua
+                para transformar conocimientos en soluciones prácticas.
+            </p>
+
+        </div>
+
+        <!-- PROYECTOS ACTUALES -->
+
+        <div class="project-category">
+
+            <div class="category-heading">
+
+                <span class="category-number">01.</span>
+
+                <h3>Proyectos actuales</h3>
+
+                <span class="category-status">
+                    En desarrollo
+                </span>
+
+            </div>
+
+            <div class="project-grid">
+
+                <article class="project-card">
+
+                    <div class="project-icon">⚙</div>
+
+                    <h4>
+                        Industria 4.0 y productividad empresarial
+                    </h4>
+
+                    <p>
+                        Proyecto académico de prospectiva
+                        desarrollado en equipo.
+                    </p>
+
+                    <div class="project-focus">
+                        Enfoque: analizar la relación entre
+                        la transformación industrial,
+                        la tecnología y la productividad empresarial.
+                    </div>
+
+                </article>
+
+                <article class="project-card">
+
+                    <div class="project-icon">📦</div>
+
+                    <h4>
+                        Gestión de operaciones y mejoramiento del almacén – Recuperar S.A.S.
+                    </h4>
+
+                    <p>
+                        Iniciativas relacionadas con la gestión
+                        de dotación, inventarios, auditoría,
+                        indicadores de gestión y seguimiento
+                        de procesos.
+                    </p>
+
+                    <div class="project-focus">
+                        Enfoque: fortalecer la organización,
+                        trazabilidad y eficiencia de las operaciones.
+                    </div>
+
+                </article>
+
+                <article class="project-card">
+
+                    <div class="project-icon">📊</div>
+
+                    <h4>
+                        Construcciones El Cóndor – Prospectiva financiera 2026-2030
+                    </h4>
+
+                    <p>
+                        Proyecto académico del área de Finanzas.
+                    </p>
+
+                    <div class="project-focus">
+                        Enfoque: análisis y proyección financiera
+                        de la organización para el periodo 2026-2030.
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+        <!-- PROYECTOS ANTERIORES -->
+
+        <div class="project-category">
+
+            <div class="category-heading">
+
+                <span class="category-number">02.</span>
+
+                <h3>Proyectos y trabajos anteriores</h3>
+
+                <span class="category-status past">
+                    Experiencias y aprendizajes
+                </span>
+
+            </div>
+
+            <div class="project-grid">
+
+                <article class="project-card">
+
+                    <div class="project-icon">🧺</div>
+
+                    <h4>
+                        Formulación de proyecto: Lavandería
+                    </h4>
+
+                    <p>
+                        Ejercicio académico de formulación
+                        y evaluación de proyectos.
+                    </p>
+
+                    <div class="project-focus">
+                        Propuesta orientada a una lavandería
+                        en un sector de estrato 3 de Medellín.
+                    </div>
+
+                </article>
+
+                <article class="project-card">
+
+                    <div class="project-icon">📋</div>
+
+                    <h4>
+                        Gestión de inventarios y procesos logísticos
+                    </h4>
+
+                    <p>
+                        Experiencia en la organización y
+                        seguimiento de inventarios, solicitudes,
+                        órdenes de compra y procesos de abastecimiento.
+                    </p>
+
+                    <div class="project-focus">
+                        Contexto: gestión de operaciones
+                        en Recuperar S.A.S.
+                    </div>
+
+                </article>
+
+                <article class="project-card">
+
+                    <div class="project-icon">📈</div>
+
+                    <h4>
+                        Presentación y gestión del comité de compras
+                    </h4>
+
+                    <p>
+                        Preparación de información para la
+                        presentación del inventario semestral
+                        y el comité de compras.
+                    </p>
+
+                    <div class="project-focus">
+                        Experiencia de aplicación de análisis
+                        y organización de información para
+                        apoyar la gestión administrativa.
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+        <!-- PROYECTOS FUTUROS -->
+
+        <div class="project-category">
+
+            <div class="category-heading">
+
+                <span class="category-number">03.</span>
+
+                <h3>Proyectos futuros</h3>
+
+                <span class="category-status future">
+                    Por desarrollar
+                </span>
+
+            </div>
+
+            <div class="project-grid">
+
+                <article class="project-card">
+
+                    <div class="project-icon">🌐</div>
+
+                    <h4>
+                        Sistema personal de gestión de vida
+                    </h4>
+
+                    <p>
+                        Crear un espacio digital en Google Sites
+                        para centralizar presupuesto, universidad,
+                        proyectos, objetivos y actividades personales.
+                    </p>
+
+                    <div class="project-focus">
+                        Objetivo: integrar la gestión personal
+                        en un entorno digital.
+                    </div>
+
+                </article>
+
+                <article class="project-card">
+
+                    <div class="project-icon">🤖</div>
+
+                    <h4>
+                        Automatización y analítica de datos
+                    </h4>
+
+                    <p>
+                        Profundizar en herramientas como Power BI,
+                        Excel, AppSheet e inteligencia artificial.
+                    </p>
+
+                    <div class="project-focus">
+                        Objetivo: automatizar tareas, visualizar
+                        información y mejorar la toma de decisiones.
+                    </div>
+
+                </article>
+
+                <article class="project-card">
+
+                    <div class="project-icon">🎯</div>
+
+                    <h4>
+                        Libertad financiera
+                    </h4>
+
+                    <p>
+                        Desarrollar un proyecto personal orientado
+                        a construir independencia económica y
+                        diversificar fuentes de ingresos.
+                    </p>
+
+                    <div class="project-focus">
+                        Objetivo: alcanzar mayor autonomía sobre mi tiempo.
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+        <!-- VISIÓN -->
+
+        <div class="project-note">
+
+            <h3>Mi visión</h3>
+
+            <p>
+                No entiendo los proyectos únicamente como
+                entregables o actividades académicas. Los veo
+                como oportunidades para experimentar, resolver
+                problemas, adquirir nuevas habilidades y construir
+                el futuro que quiero.
+            </p>
+
+            <strong>
+                APRENDER. EXPERIMENTAR. CONSTRUIR. EVOLUCIONAR.
+            </strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =================================
+     CONTACTO Y REDES
+================================= -->
 
 <section class="contact" id="contacto">
 
-    <h2 class="section-title">
-        Conectemos
-    </h2>
+    <div class="container">
 
-    <p>
-        Estoy interesado en oportunidades profesionales,
-        proyectos y espacios de aprendizaje.
-    </p>
+        <span class="section-tag">
+            Hablemos
+        </span>
 
-    <p>
-        <strong>Correo electrónico:</strong>
+        <h2 class="section-title">
+            Conectemos
+        </h2>
 
-        <a href="mailto:juanc.gaviriag@gmail.com">
-            juanc.gaviriag@gmail.com
-        </a>
-    </p>
+        <p class="section-subtitle">
+            Estoy abierto a nuevas oportunidades,
+            proyectos, colaboraciones y experiencias
+            de aprendizaje.
+        </p>
 
-    <p>
-        Medellín, Antioquia, Colombia
-    </p>
+        <div class="contact-grid">
 
-    <a
-        class="button no-print"
-        href="mailto:juanc.gaviriag@gmail.com"
-    >
-        Enviar correo
-    </a>
+            <div class="contact-card">
+
+                <div class="contact-icon">✉</div>
+
+                <h3>Correo electrónico</h3>
+
+                <a href="mailto:juanc.gaviriag@gmail.com">
+                    juanc.gaviriag@gmail.com
+                </a>
+
+            </div>
+
+            <div class="contact-card">
+
+                <div class="contact-icon">◎</div>
+
+                <h3>Instagram</h3>
+
+                <a
+                    href="https://www.instagram.com/juanc.gaviriav/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    @juanc.gaviriav
+                </a>
+
+            </div>
+
+            <div class="contact-card">
+
+                <div class="contact-icon">📍</div>
+
+                <h3>Ubicación</h3>
+
+                <p>
+                    Medellín, Antioquia, Colombia
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
 </main>
 
-<!-- PIE DE PÁGINA -->
+<!-- =================================
+     PIE DE PÁGINA
+================================= -->
 
 <footer>
 
     <p>
         © 2026 Juan Carlos Gaviria Valencia.
-        Portafolio profesional.
+    </p>
+
+    <p>
+        Administración · Tecnología · Innovación
+    </p>
+
+    <p>
+        <span>Aprender. Experimentar. Construir. Evolucionar.</span>
     </p>
 
 </footer>
 
-<!-- FUNCIONALIDADES JAVASCRIPT -->
+<!-- =================================
+     DESCARGA PDF
+================================= -->
 
 <script>
-
-/* CARGAR FOTOGRAFÍA DE PERFIL */
-
-const photoInput = document.getElementById("photoInput");
-const profilePhoto = document.getElementById("profilePhoto");
-const photoPlaceholder = document.getElementById("photoPlaceholder");
-
-photoInput.addEventListener("change", function(event) {
-
-    const file = event.target.files[0];
-
-    if (!file) {
-        return;
-    }
-
-    if (!file.type.startsWith("image/")) {
-        alert("Por favor selecciona una imagen válida.");
-        return;
-    }
-
-    if (file.size > 10 * 1024 * 1024) {
-        alert("La imagen no debe superar los 10 MB.");
-        photoInput.value = "";
-        return;
-    }
-
-    const reader = new FileReader();
-
-    reader.onload = function(e) {
-
-        profilePhoto.src = e.target.result;
-
-        profilePhoto.style.display = "block";
-
-        photoPlaceholder.style.display = "none";
-
-    };
-
-    reader.readAsDataURL(file);
-
-});
-
-/* DESCARGAR PORTAFOLIO EN PDF */
 
 function descargarPDF() {
 
     const tituloOriginal = document.title;
 
-    document.title = "Portafolio_Juan_Carlos_Gaviria_Valencia";
+    document.title =
+        "Portafolio_Juan_Carlos_Gaviria_Valencia";
 
     window.print();
 
